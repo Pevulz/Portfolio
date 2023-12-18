@@ -1,7 +1,44 @@
 import { useState, useEffect } from "react";
+import Home from "./Home";
+import About from "./About";
+import Experience from "./Experience";
+import Project from "./Project";
+import Contact from "./Contact";
 
-function NavBar({ navData }) {
-  const data = navData;
+function NavBar() {
+  const data = [
+    {
+      id: "home",
+      component: Home,
+      tabTitle: "HOME",
+      logo: "bi bi-house-fill",
+    },
+    {
+      id: "about",
+      component: About,
+      tabTitle: "ABOUT",
+      logo: "bi bi-file-person-fill",
+    },
+    {
+      id: "experience",
+      component: Experience,
+      tabTitle: "EXPERIENCE",
+      logo: "bi bi-briefcase-fill",
+    },
+    {
+      id: "project",
+      component: Project,
+      tabTitle: "PROJECT",
+      logo: "bi bi-file-earmark-check-fill",
+    },
+    {
+      id: "contact",
+      component: Contact,
+      tabTitle: "CONTACT",
+      logo: "bi bi-person-vcard-fill",
+    },
+  ];
+
   const HomePage = data.at(0).component;
 
   const [activeTab, setActiveTab] = useState("HOME");
@@ -9,27 +46,15 @@ function NavBar({ navData }) {
 
   function tabClicked(e) {
     //get text
-    const text = e.target.textContent;
-    //check if active tab and clicked text match
-    if (activeTab != text) {
-      //go through the data array to turn tab that is clicked active and everything else not active
-      data.map((data) => {
-        if (data.id.toLowerCase() == text.toLowerCase()) {
-          data.tabClicked = true;
-        } else {
-          data.tabClicked = false;
-        }
-      });
-      setActiveTab(text);
-    }
-    console.log(e);
+    const text = e.target.textContent.toLowerCase();
+    setActiveTab(text);
   }
 
   //switch between tabs when clicked
   //render on click only
   useEffect(() => {
     data.map((data) => {
-      if (data.tabClicked == true) {
+      if (data.id == activeTab) {
         setShowTab(<data.component />);
       }
     });
@@ -39,13 +64,20 @@ function NavBar({ navData }) {
     <>
       <div className="sticky top-0 w-full h-20 flex justify-between items-center px-8 text-white bg-gradient-to-r from-neutral-950 to-neutral-950">
         <h1 className="text-2xl font-bold text-[#32ffb1]">TONY LI</h1>
-        <ul onClick={tabClicked} id="navMenu" className="flex items-center">
+        <ul
+          onClick={tabClicked}
+          id="navMenu"
+          className="hidden md:flex items-center"
+        >
           {data.map((data) => (
-            <button key={data.id} className="p-7 font-bold hover:bg-sky-700">
+            <li
+              key={data.id}
+              className="p-7 font-bold hover:bg-sky-700 cursor-pointer hover:scale-110 duration-200"
+            >
               {/*note: fix bug where when icon is clicked, page doesn't switch*/}
               <i key={data.id} className={`p-2 ${data.logo}`}></i>
               {data.tabTitle}
-            </button>
+            </li>
           ))}
         </ul>
       </div>
