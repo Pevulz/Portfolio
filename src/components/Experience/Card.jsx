@@ -24,13 +24,13 @@ function Card({ data }) {
         <div
           onClick={showCard}
           key={data.id}
-          className="bg-black text-white flex flex-col items-center justify-center w-64 h-96 cursor-pointer hover:scale-110 duration-200"
+          className="relative rounded-xl bg-gradient-to-br from-orange-500 to-orange-400 text-black flex flex-col items-center justify-center w-64 h-96 cursor-pointer hover:scale-110 duration-200"
         >
           <div className="text-xl font-bold ">{data.companyTitle}</div>
           <p className="pb-5">({data.time})</p>
           {details.map((details) => (
             <>
-              <li className="px-10">{details}</li>
+              <li className="text-center">{details}</li>
             </>
           ))}
         </div>
@@ -44,7 +44,7 @@ function Card({ data }) {
         <div
           key={data.id}
           onClick={showCard}
-          className="bg-white flex items-center justify-center w-64 h-96 cursor-pointer hover:scale-110 duration-200"
+          className="relative rounded-xl bg-gradient-to-br from-orange-500 to-orange-400 flex items-center justify-center w-64 h-96 cursor-pointer hover:scale-110 duration-200"
         >
           <img key={data.id} src={data.logo}></img>
         </div>

@@ -18,8 +18,8 @@ function Home() {
 
   return (
     <>
-      <div className="h-screen bg-gray-400 flex flex-col items-center justify-center">
-        <p className="animate-bounce text-8xl">{tools[index]}</p>
+      <div className="h-screen flex flex-col items-center justify-center bg-no-repeat bg-cover bg-center bg-fixed bg-[url('https://img.freepik.com/free-vector/abstract-blue-light-pipe-speed-zoom-black-background-technology_1142-9980.jpg?w=1060&t=st=1703469359~exp=1703469959~hmac=e7f0f99fbfdd35093ce64b159fbef93215bac817048b243d024e3f53720bd434')]">
+        <p className="animate-bounce text-white text-8xl">{tools[index]}</p>
       </div>
     </>
   );

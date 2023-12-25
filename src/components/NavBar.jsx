@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import Home from "./Home";
-import About from "./About";
-import Experience from "./Experience";
-import Project from "./Project";
-import Contact from "./Contact";
+import Home from "./Home/Home";
+import About from "./About/About";
+import Experience from "./Experience/Experience";
+import Project from "./Project/Project";
+import Contact from "./Contact/Contact";
 
 function NavBar() {
   const data = [
@@ -62,8 +62,8 @@ function NavBar() {
 
   return (
     <>
-      <div className="sticky top-0 w-full h-20 flex justify-between items-center px-8 text-white bg-gradient-to-r from-neutral-950 to-neutral-950">
-        <h1 className="text-2xl font-bold text-[#32ffb1]">TONY LI</h1>
+      <div className="z-50 fixed top-0 w-full h-20 flex justify-between items-center px-8 text-white bg-gradient-to-r from-neutral-950 to-neutral-950">
+        <h1 className="text-2xl font-bold text-[#ffec3e]">TONY LI</h1>
         <ul
           onClick={tabClicked}
           id="navMenu"

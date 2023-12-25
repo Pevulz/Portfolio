@@ -27,7 +27,7 @@ function Experience() {
       time: "July 2021 - September 2021",
     },
     {
-      id: "adventurerpark",
+      id: "adventurer_park",
       companyTitle: "Adventurer's Park",
       logo: "https://adventurerspark.com/wp-content/uploads/2020/03/logo.png",
       detail:
@@ -35,7 +35,7 @@ function Experience() {
       time: "June 2019 - November 2019",
     },
     {
-      id: "funfunsaturday",
+      id: "fun_fun_saturday",
       companyTitle: "Fun Fun Saturday",
       logo: "https://www.ueaa.org/wp-content/uploads/2022/01/UeaaBlue_logo-title-1.svg",
       detail:
@@ -46,7 +46,7 @@ function Experience() {
 
   return (
     <>
-      <div className="px-10 w-screen h-screen bg-gray-400 flex items-center justify-between">
+      <div className="px-10 w-full h-screen flex items-center justify-between bg-no-repeat bg-cover bg-center bg-fixed bg-[url('https://img.freepik.com/free-vector/dark-minimal-hexagons-background_79603-1455.jpg?size=626&ext=jpg&ga=GA1.1.600854673.1703469356&semt=ais')]">
         {experienceData.map((experienceData) => (
           <div key={experienceData.id}>
             <Card data={experienceData}></Card>
