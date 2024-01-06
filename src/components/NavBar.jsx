@@ -72,7 +72,7 @@ function NavBar() {
           {data.map((data) => (
             <li
               key={data.id}
-              className="p-7 font-bold hover:bg-sky-700 cursor-pointer hover:scale-110 duration-200"
+              className=" p-7 font-bold hover:bg-sky-700 cursor-pointer hover:scale-110 duration-200"
             >
               {/*note: fix bug where when icon is clicked, page doesn't switch*/}
               <i key={data.id} className={`p-2 ${data.logo}`}></i>
